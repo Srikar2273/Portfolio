@@ -5,8 +5,19 @@ function App() {
 
   return (
     <>
-      <Box sx={{width:'100%', height:'100vh', border: '1px solid red'}}>
+      <Box 
+      sx={{
+        width:'100%',
+        height:'99vh',
+        position:'relative',
+        bgcolor : '#262020a8',
+      }}
+      >
+        <Box sx={{
+          maxWidth:'20%',
+        }} >
         <NavBar /> 
+        </Box>
       </Box>
     </>
   )
