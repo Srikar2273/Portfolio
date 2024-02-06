@@ -1,11 +1,4 @@
-.Layout {
-    margin: 0;
-    padding: 0;
-    background-color: white;
-}
-
 .navbar {
     max-width: 4%;
     min-height: 2%;
-    background-color: red;
 }
