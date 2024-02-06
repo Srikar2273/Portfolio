@@ -1,51 +1,58 @@
 .vertical-navbar {
-    width: 20%;
-    background-color: #333;
-    color: #fff;
-    overflow: hidden;
-    transition: width 0.9s;
-  }
-  
-  .vertical-navbar.expanded {
+  width: 20%;
+  background-color: #333;
+  color: #fff;
+  overflow: hidden;
+  transition: width 0.9s;
+  border-radius: 10%;
+}
+
+.vertical-navbar.expanded {
+  width: 100%;
+}
+
+.navbar-button {
+  cursor: pointer;
+  padding: 10px;
+  user-select: none;
+}
+
+.navbar-icon {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: padding 0.3s;
+}
+
+.navbar-icon:hover {
+  padding-left: 15px;
+}
+
+.label {
+  margin-left: 10px;
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.navbar-icon:hover .label {
+  opacity: 1;
+  transform: translateX(5px);
+}
+
+.expanded .label {
+  opacity: 1;
+  transform: translateX(5px);
+}
+
+/* Media Query for responsiveness */
+@media screen and (max-width: 768px) {
+  .vertical-navbar {
     width: 100%;
+    height: fit-content;
   }
   
   .navbar-button {
-    cursor: pointer;
-    padding: 10px;
-    text-align: center;
-    align-items: center;
-    user-select: none;
+    justify-content: center;
   }
-  
-  .navbar-icon {
-    padding: 10px;
-    cursor: pointer;
-    transition: padding 0.3s;
-  }
-  
-  .navbar-icon:hover {
-    padding-left: 20px;
-  }
-  
-  .label {
-    margin-left: 5px;
-    opacity: 0;
-    transition: opacity 0.3s, transform 0.3s;
-  }
-  
-  .navbar-icon:hover .label {
-    opacity: 1;
-    transform: translateX(5px);
-  }
-  
-  .label {
-    margin-left: 10px;
-    opacity: 0;
-    transition: opacity 0.3s, transform 0.3s;
-  }
-  
-  .expanded .label {
-    opacity: 1;
-    transform: translateX(5px);
-  }
+}

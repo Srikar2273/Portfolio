@@ -1,24 +1,15 @@
 import './App.css'
 import { Box } from '@mui/material'
 import NavBar from './Components/Navbar'
+import { useRef } from 'react'
+
 function App() {
 
   return (
     <>
-      <Box 
-      sx={{
-        width:'100%',
-        height:'99vh',
-        position:'relative',
-        bgcolor : '#262020a8',
-      }}
-      >
-        <Box sx={{
-          maxWidth:'20%',
-        }} >
-        <NavBar /> 
+        <Box height='99.7vh' sx={{overflowY:'auto'}}>
+        <NavBar />
         </Box>
-      </Box>
     </>
   )
 }
