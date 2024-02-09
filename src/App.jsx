@@ -1,16 +1,23 @@
 import './App.css'
-import { Box } from '@mui/material'
+import { Box, Grid } from '@mui/material'
 import NavBar from './Components/Navbar'
-import { useRef } from 'react'
+import Home from './Components/Home'
 
 function App() {
 
   return (
-    <>
-        <Box height='99.7vh' sx={{overflowY:'auto'}}>
-        <NavBar />
-        </Box>
-    </>
+    <Box sx={{
+      height: '99.7vh',
+      maxWidth: '100%',
+      position: 'relative',
+      display:'flex',
+      justifyContent: 'center',
+      alignItems:'center',
+      bgcolor:'#000000'
+    }}>
+      <NavBar />
+      <Home />
+    </Box>
   )
 }
 
