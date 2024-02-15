@@ -6,6 +6,7 @@ import { Grid } from '@mui/material';
 import './NavBar.css';
 import Lottie from 'react-lottie';
 import animatedjson from '../../assets/Animation.json';
+import { motion } from 'framer-motion';
 
 const VerticalNavbar = () => {
   const [expanded, setExpanded] = useState(false);
@@ -14,14 +15,6 @@ const VerticalNavbar = () => {
     setExpanded(!expanded);
   };
 
-  const [animationComplete, setAnimationComplete] = useState(false);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setAnimationComplete(true);
-    }, 2000);
-    console.log(animationComplete, 'ani state')
-  }, []);
   const options = {
     loop: false,
     autoplay: true,
@@ -33,15 +26,14 @@ const VerticalNavbar = () => {
       <Grid container direction='column' sx={{ maxWidth: '8%', height: '99.7vh', position: 'absolute', left: '0' }} >
         {
           <Grid item>
-            <Lottie options={options} />
+            <motion.div
+              style={{ overflow: 'hidden' }}
+              animate={{ x: ['-300%', '0%'] }}
+              transition={{ type: 'tween', duration: 1 }}
+            >
+              <Lottie options={options} />
+            </motion.div>
           </Grid>
-          // <Grid item >
-          //   {
-          //     animationComplete ? (<img src='assets\letterS.png' style={{ width: '80%' }} />)
-          //       :
-          //       (<img src='assets\Animation.gif' style={{ width: '80%' }} />)
-          //   }
-          // </Grid>
         }
         <Grid item marginTop='100%' sx={{
           display: 'flex',
@@ -61,14 +53,26 @@ const VerticalNavbar = () => {
               className="navbar-button"
               onClick={toggleExpand}
             >
-              <Grid item >
-                {expanded ? <ArrowBackIosNewIcon /> : <ArrowForwardIosIcon />}
-              </Grid>
+              <motion.div
+                style={{ overflow: 'hidden' }}
+                animate={{ x: ['-300%', '0%'] }}
+                transition={{ type: 'tween', duration: 1 }}
+              >
+                <Grid item >
+                  {expanded ? <ArrowBackIosNewIcon /> : <ArrowForwardIosIcon />}
+                </Grid>
+              </motion.div>
             </Grid>
             <Grid container direction="column" className="navbar-icons" gap={1}>
-              <NavbarIcon icon={<FaHome />} title="Home" />
-              <NavbarIcon icon={<FaUser />} title="About" />
-              <NavbarIcon icon={<FaCog />} title="Contact" />
+              <motion.div
+                style={{ overflow: 'hidden' }}
+                animate={{ x: ['-300%', '0%'] }}
+                transition={{ type: 'tween', duration: 1 }}
+              >
+                <NavbarIcon icon={<FaHome />} title="Home" />
+                <NavbarIcon icon={<FaUser />} title="About" />
+                <NavbarIcon icon={<FaCog />} title="Contact" />
+              </motion.div>
             </Grid>
           </Grid>
         </Grid>
