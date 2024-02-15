@@ -1,5 +1,5 @@
 import './App.css'
-import { Box, Grid } from '@mui/material'
+import { Box } from '@mui/material'
 import NavBar from './Components/Navbar'
 import Home from './Components/Home'
 
@@ -10,10 +10,10 @@ function App() {
       height: '99.7vh',
       maxWidth: '100%',
       position: 'relative',
-      display:'flex',
+      display: 'flex',
       justifyContent: 'center',
-      alignItems:'center',
-      bgcolor:'#000000'
+      alignItems: 'center',
+      bgcolor: '#000000'
     }}>
       <NavBar />
       <Home />
